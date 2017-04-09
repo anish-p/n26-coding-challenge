@@ -115,12 +115,7 @@ public class Transaction extends TransactionEntity implements Serializable {
 
         @Override
         public TransactionEntity build() {
-            return new Transaction.Builder()
-                    .amount(amount)
-                    .timestamp(timestamp)
-                    .createdTimestamp(createdTimestamp)
-                    .lastModifiedTimestamp(lastModifiedTimestamp)
-                    .build();
+            return new Transaction(amount, timestamp, createdTimestamp, lastModifiedTimestamp);
         }
     }
 }

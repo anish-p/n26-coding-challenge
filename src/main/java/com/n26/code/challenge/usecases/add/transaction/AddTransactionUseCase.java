@@ -19,6 +19,7 @@ public class AddTransactionUseCase implements UseCase<AddTransactionUseCaseReque
                 .createdTimestamp(new Timestamp(System.currentTimeMillis()))
                 .lastModifiedTimestamp(new Timestamp(System.currentTimeMillis()))
                 .build();
+        this.transactionGateway.save(transaction);
         return createUseCaseResponse(true);
     }
 
