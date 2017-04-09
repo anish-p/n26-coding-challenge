@@ -12,8 +12,8 @@ public class TransactionSummaryUseCase implements UseCase<TransactionSummaryUseC
 
     @Override
     public TransactionSummaryUseCaseResponse execute(TransactionSummaryUseCaseRequest useCaseRequest) {
-        List<Double> transactions = this.transactionGateway.findAll(useCaseRequest.fromTimestamp);
-        return (transactions == null ? null : createUseCaseResponse(transactions));
+        List<Double> transactionAmounts = this.transactionGateway.findAll(useCaseRequest.fromTimestamp);
+        return (transactionAmounts == null ? null : createUseCaseResponse(transactionAmounts));
     }
 
     public void setTransactionGateway(TransactionGateway transactionGateway) {
