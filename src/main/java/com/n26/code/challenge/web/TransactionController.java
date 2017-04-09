@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.lang.invoke.MethodHandles;
 import java.sql.Timestamp;
 
@@ -30,7 +31,7 @@ public class TransactionController {
     private TransactionSummaryUseCase transactionSummaryUseCase;
 
     @RequestMapping(value = "/transactions", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<HttpStatus> createTransaction(@RequestBody final AddTransactionUseCaseRequest addTransactionUseCaseRequest) {
+    public ResponseEntity<HttpStatus> createTransaction(@Valid @RequestBody final AddTransactionUseCaseRequest addTransactionUseCaseRequest) {
         LOGGER.info("Request:" + addTransactionUseCaseRequest);
         final AddTransactionUseCaseResponse addTransactionUseCaseResponse = addTransactionUseCase
                 .execute(addTransactionUseCaseRequest);
