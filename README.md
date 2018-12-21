@@ -42,7 +42,4 @@ cd ~/git/statistics
 java -Dspring.profiles.active=local -jar target/statistics-1.0.0.jar
 ```
 
-
 This is a test commit
-
-This is the second commit
